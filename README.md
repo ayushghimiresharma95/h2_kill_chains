@@ -51,6 +51,87 @@ Analyzing both successful and unsuccessful intrusions enables defenders to detec
 
 ## Campaign Analysis
 
-Campaign analysis entails the temporal research of several cross-encroachment kill chains to establish resemblances and recurring characteristics across attacks, identifying them as part of a broader threat campaign. Defenders recognize these repetitive indicators and develop action plans in anticipation of future attacks.
-
+Campaign analysis entails the temporal research of several cross-encroachment kill chains to establish resemblances and recurring characteristics across attacks, identifying them as part of a broader threat campaign. Defenders recognize these repetitive indicators and 
+develop action plans in anticipation of future attacks.
 This methodology aims to analyze the tactics, techniques, and procedures (TTPs) of adversaries, determining how a specific actor operates and what goals they pursue. This allows defenders to evaluate their defense posture, identify vulnerabilities, and strategically plan security measures to protect assets from ongoing threats.
+
+# Installing Debian 12 (Bookworm) on VirtualBox
+
+## 1. Install and Configure VirtualBox
+
+### 1.1 Downloading VirtualBox
+
+1. Visit the [VirtualBox website](https://www.virtualbox.org/).
+2. Download the VirtualBox installer for your OS (Windows, macOS, or Linux).
+
+### 1.2 Installing VirtualBox
+
+1. Run the installer (`VirtualBox-<version>-Win.exe` for Windows).
+2. Follow the setup wizard, keeping default settings.
+3. Complete the installation and launch VirtualBox.
+
+### 1.3 Configuring VirtualBox
+
+1. Open VirtualBox and go to `File > Preferences`.
+2. Verify default settings for general, input, and network options.
+
+## 2. Set Up a Debian 12 Virtual Machine
+
+### 2.1 Downloading the Debian 12 ISO
+
+1. Visit the [Debian website](https://www.debian.org/).
+2. Download the Debian 12 (Bookworm) "netinst" ISO for `amd64`.
+
+### 2.2 Creating a New Virtual Machine
+
+1. Click "New" in VirtualBox.
+2. Name the VM `Debian 12 Bookworm`, set `Type: Linux` and `Version: Debian (64-bit)`.
+3. Allocate `2048 MB` RAM and create a `20 GB` virtual hard disk (VDI, dynamically allocated).
+
+### 2.3 Configuring VM Settings
+
+1. Open VM settings:
+   - System: Uncheck "Floppy", allocate `2 CPUs`.
+   - Display: Set video memory to `128 MB`.
+   - Storage: Add Debian ISO to the optical drive.
+   - Network: Ensure "Adapter 1" is attached to "NAT".
+2. Click "OK" to save settings.
+
+## 3. Install Debian 12 (Bookworm)
+
+### 3.1 Starting the Virtual Machine
+
+1. Select the Debian VM and click "Start".
+2. In the boot menu, select "Graphical Install".
+
+### 3.2 Running the Debian Installer
+
+1. Follow prompts to set language, location, and keyboard.
+2. Configure network: Set hostname (`debian`), leave domain blank.
+3. Set root and user passwords.
+
+### 3.3 Partitioning the Disk
+
+1. Select "Guided - use entire disk".
+2. Choose the virtual disk and "All files in one partition".
+3. Confirm and write changes to the disk.
+
+### 3.4 Base System and Package Installation
+
+1. Install the base system.
+2. Configure package manager: Select a mirror and skip the proxy.
+3. Install `Debian desktop environment` and `standard system utilities`.
+
+### 3.5 Install GRUB Boot Loader
+
+1. Install GRUB to the primary drive (`/dev/sda`).
+2. Reboot after installation completes.
+
+## 4. Post-Installation Steps
+
+1. Log in with the user account.
+2. Update the system:
+   ```bash
+   sudo apt update
+   sudo apt upgrade -y
+
