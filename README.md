@@ -192,11 +192,4 @@ I selected "Yes" to install the GRUB boot loader to the primary drive (`/dev/sda
 
 The installation completed. I clicked "Continue" to reboot the system.
 
-## 4. Post-Installation Configuration
 
-Debian 12 booted successfully. I logged in using the credentials created during installation (`username: user`).
-
-I updated the system by opening the terminal and running:
-```bash
-sudo apt update
-sudo apt upgrade -y
