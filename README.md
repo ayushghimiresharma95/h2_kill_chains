@@ -45,9 +45,7 @@ The goal is to achieve resilience against persistent threats, including zero-day
 
 ## Intrusion Reconstruction
 
-Kill chain analysis helps analysts understand and anticipate cyber intrusions by examining all phases of an attack, from delivery to exploitation. Instead of responding only after an exploit has occurred, defenders should analyze earlier stages to prevent future attacks. This approach helps identify and counteract the tools and methods attackers use, forcing them to constantly adapt.
-
-Analyzing both successful and unsuccessful intrusions enables defenders to detect threats earlier in the kill chain and maintain a tactical advantage by staying ahead of adversaries. This proactive strategy improves resilience by anticipating and mitigating future threats.
+Kill chain analysis gives analysts insight into cyber attacks by looking at every step, from how they start to how they work. Rather than just reacting after an attack happens, security teams should look at earlier parts to stop future attacks. This approach helps spot and fight back against the tools and methods hackers use making them always change their tactics. Looking at both attacks that work and those that don't lets security teams catch threats earlier in the kill chain. This keeps them one step ahead of the bad guys. This forward-thinking plan makes systems stronger by getting ready for and stopping future threats before they happen.
 
 ## Campaign Analysis
 
