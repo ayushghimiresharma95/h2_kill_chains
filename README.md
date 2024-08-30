@@ -55,83 +55,154 @@ Campaign analysis entails the temporal research of several cross-encroachment ki
 develop action plans in anticipation of future attacks.
 This methodology aims to analyze the tactics, techniques, and procedures (TTPs) of adversaries, determining how a specific actor operates and what goals they pursue. This allows defenders to evaluate their defense posture, identify vulnerabilities, and strategically plan security measures to protect assets from ongoing threats.
 
-# Installing Debian 12 (Bookworm) on VirtualBox
+Technical Report: Installing Debian 12 (Bookworm) on VirtualBox
+1. Installing and Configuring VirtualBox
+1.1 Downloading VirtualBox
+I visited the official VirtualBox website: https://www.virtualbox.org/.
 
-## 1. Install and Configure VirtualBox
+I navigated to the "Downloads" section: This section provided download links for different operating systems, such as Windows, macOS, and Linux distributions.
 
-### 1.1 Downloading VirtualBox
+I selected the appropriate version: I chose the VirtualBox version for my operating system. For this report, I used the Windows version. I clicked on the link for "Windows hosts" to download the installer.
 
-1. Visit the [VirtualBox website](https://www.virtualbox.org/).
-2. Download the VirtualBox installer for your OS (Windows, macOS, or Linux).
+1.2 Installing VirtualBox
+I ran the installer: I navigated to the folder where the installer was downloaded and double-clicked on VirtualBox-<version>-Win.exe.
 
-### 1.2 Installing VirtualBox
+I followed the installation wizard:
 
-1. Run the installer (`VirtualBox-<version>-Win.exe` for Windows).
-2. Follow the setup wizard, keeping default settings.
-3. Complete the installation and launch VirtualBox.
+I clicked "Next" to proceed through the initial setup screens.
+I chose the default installation location and clicked "Next."
+I left the default options selected for creating shortcuts and registering file associations.
+I clicked "Next" again and then "Yes" to approve network interface warnings.
+I clicked "Install" to start the installation process.
+The installation completed: Once the installation was finished, I clicked "Finish" to exit the installer. VirtualBox was now installed on my system.
 
-### 1.3 Configuring VirtualBox
+1.3 Configuring VirtualBox
+I launched VirtualBox: I double-clicked the VirtualBox shortcut on my desktop.
 
-1. Open VirtualBox and go to `File > Preferences`.
-2. Verify default settings for general, input, and network options.
+I configured the default settings: I navigated to File > Preferences and checked the default settings for general, input, and network options. I did not need to make any changes for this installation.
 
-## 2. Set Up a Debian 12 Virtual Machine
+2. Setting Up a Debian 12 Virtual Machine
+2.1 Downloading the Debian 12 ISO
+I visited the Debian website: https://www.debian.org/.
 
-### 2.1 Downloading the Debian 12 ISO
+I navigated to the "Getting Debian" section: I clicked on "Download" to access the Debian images.
 
-1. Visit the [Debian website](https://www.debian.org/).
-2. Download the Debian 12 (Bookworm) "netinst" ISO for `amd64`.
+I selected the Debian 12 (Bookworm) ISO: I chose the "amd64" architecture (64-bit) and downloaded the "netinst" ISO file, which is a minimal installation image.
 
-### 2.2 Creating a New Virtual Machine
+2.2 Creating a New Virtual Machine
+I clicked "New" in VirtualBox: In the VirtualBox main window, I clicked the "New" button to start the VM creation process.
 
-1. Click "New" in VirtualBox.
-2. Name the VM `Debian 12 Bookworm`, set `Type: Linux` and `Version: Debian (64-bit)`.
-3. Allocate `2048 MB` RAM and create a `20 GB` virtual hard disk (VDI, dynamically allocated).
+I named the virtual machine:
 
-### 2.3 Configuring VM Settings
+I entered Debian 12 Bookworm as the name.
+I set the Type to Linux.
+I set the Version to Debian (64-bit).
+I allocated memory (RAM) for the VM:
 
-1. Open VM settings:
-   - System: Uncheck "Floppy", allocate `2 CPUs`.
-   - Display: Set video memory to `128 MB`.
-   - Storage: Add Debian ISO to the optical drive.
-   - Network: Ensure "Adapter 1" is attached to "NAT".
-2. Click "OK" to save settings.
+I chose 2048 MB (2 GB) of RAM, which is sufficient for a basic Debian installation.
+I created a virtual hard disk:
 
-## 3. Install Debian 12 (Bookworm)
+I selected "Create a virtual hard disk now" and clicked "Create."
+I chose the "VDI (VirtualBox Disk Image)" option and clicked "Next."
+I selected "Dynamically allocated" to save disk space and clicked "Next."
+I set the disk size to 20 GB and clicked "Create."
+2.3 Configuring Virtual Machine Settings
+I opened the VM settings: I selected the newly created Debian 12 VM and clicked "Settings."
 
-### 3.1 Starting the Virtual Machine
+I configured the system settings:
 
-1. Select the Debian VM and click "Start".
-2. In the boot menu, select "Graphical Install".
+I went to the "System" tab.
+Under "Motherboard," I unchecked "Floppy" to speed up boot time.
+Under "Processor," I allocated 2 CPUs for better performance.
+I configured the display settings:
 
-### 3.2 Running the Debian Installer
+I navigated to the "Display" tab.
+I increased "Video Memory" to 128 MB for better graphical performance.
+I added the Debian ISO to the VM:
 
-1. Follow prompts to set language, location, and keyboard.
-2. Configure network: Set hostname (`debian`), leave domain blank.
-3. Set root and user passwords.
+I went to the "Storage" tab.
+Under "Controller: IDE," I clicked on the "Empty" optical drive.
+I clicked the disk icon next to "Optical Drive" and chose "Choose a disk file."
+I selected the downloaded Debian 12 ISO file.
+I configured the network settings:
 
-### 3.3 Partitioning the Disk
+I navigated to the "Network" tab.
+I ensured that "Adapter 1" was enabled and attached to "NAT" for basic internet access.
+I saved the settings: I clicked "OK" to save the changes.
 
-1. Select "Guided - use entire disk".
-2. Choose the virtual disk and "All files in one partition".
-3. Confirm and write changes to the disk.
+3. Installing Debian 12 (Bookworm) on the Virtual Machine
+3.1 Starting the Virtual Machine
+I started the VM: I selected the Debian 12 VM and clicked "Start."
 
-### 3.4 Base System and Package Installation
+The Debian installer booted: The VM booted from the Debian ISO, and the Debian installer screen appeared.
 
-1. Install the base system.
-2. Configure package manager: Select a mirror and skip the proxy.
-3. Install `Debian desktop environment` and `standard system utilities`.
+3.2 Running the Debian Installer
+I selected "Graphical Install": Using the arrow keys, I selected "Graphical Install" and pressed Enter.
 
-### 3.5 Install GRUB Boot Loader
+I chose the installation language: I selected English and clicked "Continue."
 
-1. Install GRUB to the primary drive (`/dev/sda`).
-2. Reboot after installation completes.
+I selected my location: I chose United States and clicked "Continue."
 
-## 4. Post-Installation Steps
+I configured the keyboard: I selected American English and clicked "Continue."
 
-1. Log in with the user account.
-2. Update the system:
-   ```bash
-   sudo apt update
-   sudo apt upgrade -y
+The installer detected the network hardware: The installer loaded the necessary drivers for network hardware.
 
+I configured the network:
+
+I set the hostname to debian and clicked "Continue."
+I left the domain name blank and clicked "Continue."
+I set up users and passwords:
+
+I set the root password and clicked "Continue."
+I created a new user account (username: user) and set a password for it.
+I configured the clock: I selected Eastern for the time zone and clicked "Continue."
+
+3.3 Partitioning the Disks
+I chose a partitioning method: I selected "Guided - use entire disk" and clicked "Continue."
+
+I selected the virtual disk: I chose the virtual disk (20 GB) and clicked "Continue."
+
+I selected the partition scheme: I chose "All files in one partition" for simplicity and clicked "Continue."
+
+I confirmed the partitioning: I selected "Finish partitioning and write changes to disk" and clicked "Continue."
+
+I confirmed writing changes: I selected "Yes" to write the changes to the disk and clicked "Continue."
+
+3.4 Installing the Base System
+The installer installed the base system: The Debian installer proceeded to install the base system packages.
+3.5 Configuring the Package Manager
+I selected a mirror for the package manager:
+
+I selected United States as the archive mirror country.
+I selected a default Debian mirror server (e.g., deb.debian.org) and clicked "Continue."
+I opted not to use a proxy: I left the proxy information blank and clicked "Continue."
+
+3.6 Installing Additional Software
+I participated in the package usage survey: I chose "No" for the survey and clicked "Continue."
+
+I selected additional software:
+
+I selected Debian desktop environment and standard system utilities and clicked "Continue."
+The installer proceeded to download and install the selected packages.
+3.7 Installing the GRUB Boot Loader
+I installed the GRUB boot loader:
+I selected "Yes" to install the GRUB boot loader to the primary drive and clicked "Continue."
+I confirmed the device (/dev/sda) for the boot loader installation.
+3.8 Finishing the Installation
+The installation completed: The Debian installer finished installing all components.
+
+I rebooted the virtual machine: I clicked "Continue" to reboot the system and complete the installation.
+
+4. Post-Installation Configuration
+Debian 12 booted successfully: After rebooting, the Debian 12 login screen appeared.
+
+I logged in with the user account: I used the credentials created during the installation (username: user).
+
+I updated the system:
+
+I opened the terminal and ran the following commands to update the package lists and upgrade all packages:
+bash
+Copy code
+sudo apt update
+sudo apt upgrade -y
+The system was updated: The package manager updated all installed packages to their latest versions
