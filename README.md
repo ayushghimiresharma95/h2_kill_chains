@@ -75,7 +75,7 @@ I followed the installation wizard:
 - Left the default options selected for shortcuts and file associations.
 - Clicked "Next" and then "Yes" to approve network interface warnings.
 - Clicked "Install" to start the process.
-
+![screenshot](virtual_box_installation complete.png)
 The installation completed, and I clicked "Finish" to exit the installer. VirtualBox was now installed.
 
 ### 1.3 Configuring VirtualBox
