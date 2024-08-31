@@ -78,7 +78,7 @@ I followed the installation wizard:
 
 The installation completed, and I clicked "Finish" to exit the installer. VirtualBox was now installed.
 
-![screenshot](intsalling_2.1.png)
+![screenshot](virtual_box_installation_complete.png)
 
 ### 1.3 Configuring VirtualBox
 
@@ -110,13 +110,14 @@ I created a virtual hard disk:
 - Selected "Dynamically allocated" and clicked "Next."
 - Set the disk size to `20 GB` and clicked "Create."
 
+![screenshot](installing_1.png)
+
 ### 2.3 Configuring Virtual Machine Settings
 
 I opened the VM settings by selecting the Debian 12 VM and clicking "Settings."
 
 I configured the system settings:
 - Under the "System" tab, I unchecked "Floppy" and allocated `2 CPUs`.
-- Under the "Display" tab, I increased "Video Memory" to `128 MB`.
 
 I added the Debian ISO:
 - Under the "Storage" tab, I clicked "Empty" under "Controller: IDE."
@@ -127,6 +128,8 @@ I configured network settings:
 - Under the "Network" tab, I ensured "Adapter 1" was enabled and attached to "NAT."
 
 I saved the settings by clicking "OK."
+
+![screenshot](installing_2.png)
 
 ## 3. Installing Debian 12 (Bookworm) on the Virtual Machine
 
@@ -152,13 +155,18 @@ I configured the network:
 - Set the hostname to `debian` and clicked "Continue."
 - Left the domain name blank and clicked "Continue."
 
+  ![screenshot](installing_2.1.png)
+
 I set up users and passwords:
 - Set the root password and clicked "Continue."
 - Created a new user account (`username: user`) and set a password.
 
+  ![screenshot](installing_2.2.png)
 
 
 I confirmed partitioning and writing changes to the disk by selecting "Yes" and clicking "Continue."
+
+![screenshot](installing_2.3.png)
 
 ### 3.4 Installing the Base System
 
@@ -169,6 +177,8 @@ The installer proceeded to install the base system packages.
 I selected United States as the archive mirror country and a default Debian mirror server (e.g., `deb.debian.org`).
 
 I opted not to use a proxy and clicked "Continue."
+
+![screenshot](installing_2.4.png)
 
 ### 3.6 Installing Additional Software
 
@@ -181,10 +191,15 @@ The installer downloaded and installed the selected packages.
 ### 3.7 Installing the GRUB Boot Loader
 
 I selected "Yes" to install the GRUB boot loader to the primary drive (`/dev/sda`) and clicked "Continue."
+![screenshot](installing_2.5.png)
 
 ### 3.8 Finishing the Installation
 
 The installation completed. I clicked "Continue" to reboot the system.
+
+![screenshot](installing_3.png)
+
+![screenshot](installing_4.png)
 
 
 ## Sources 
