@@ -142,7 +142,7 @@ I chose English as the installation language and clicked "Continue."
 
 I selected United States as my location and clicked "Continue."
 
-I configured the keyboard to American English and clicked "Continue."
+I configured the keyboard to Finnish and clicked "Continue."
 
 The installer detected the network hardware and loaded necessary drivers.
 
