@@ -98,7 +98,7 @@ I selected the Debian 12 (Bookworm) ISO for the `amd64` architecture and downloa
 
 I clicked "New" in VirtualBox to start the VM creation process.
 
-I named the VM `Debian 12 Bookworm`, set `Type` to Linux, and `Version` to Debian (64-bit).
+I named the VM `debian`, set `Type` to Linux, and `Version` to Debian (64-bit).
 
 I allocated `2048 MB` of RAM.
 
@@ -154,15 +154,7 @@ I set up users and passwords:
 - Set the root password and clicked "Continue."
 - Created a new user account (`username: user`) and set a password.
 
-I configured the clock to Eastern time zone and clicked "Continue."
 
-### 3.3 Partitioning the Disks
-
-I selected "Guided - use entire disk" and clicked "Continue."
-
-I chose the virtual disk (20 GB) and clicked "Continue."
-
-I selected "All files in one partition" and clicked "Continue."
 
 I confirmed partitioning and writing changes to the disk by selecting "Yes" and clicking "Continue."
 
@@ -192,4 +184,8 @@ I selected "Yes" to install the GRUB boot loader to the primary drive (`/dev/sda
 
 The installation completed. I clicked "Continue" to reboot the system.
 
+
+#Sources 
+Hutchins et al 2011: Intelligence-Driven Computer Network Defense Informed by Analysis of Adversary Campaigns and Intrusion Kill Chains.URL:https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
+Ksh Royal: How To Install Debian 12 in VirtualBox | Debian Linux 2023, 13, June,2023.URL:https://www.youtube.com/watch?v=MxIAyAELqu4
 
